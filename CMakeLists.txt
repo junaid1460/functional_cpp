@@ -1,23 +1,23 @@
 
 cmake_minimum_required(VERSION 3.0.0)
 
-set(FOO_PROJECT_NAME
-    Foo
+set(EX_PROJECT_NAME
+    ex_cpp
 )
-set(FOO_SOURCE_DIR
+set(EX_SOURCE_DIR
     src
 )
-set(FOO_SOURCE
-    ${FOO_SOURCE_DIR}/main.cpp
+set(EX_SOURCE
+    ${EX_SOURCE_DIR}/main.cpp
 )
-set(FOO_LIBRARIES_DIR
+set(EX_LIBRARIES_DIR
     libs
 )
-set(FOO_LIBRARIES 
+set(EX_LIBRARIES 
     defmacro
 )
 
-project(${FOO_PROJECT_NAME})
+project(${EX_PROJECT_NAME})
 
 #########
 # GTest #
@@ -29,9 +29,9 @@ include_directories(${gtest_SOURCE_DIR}/include ${gtest_SOURCE_DIR})
 ###########
 # Project #
 ###########
-add_executable(${FOO_PROJECT_NAME} ${FOO_SOURCE})
+add_executable(${EX_PROJECT_NAME} ${EX_SOURCE})
 
-foreach(LIBRARY ${FOO_LIBRARIES})
-    add_subdirectory("${FOO_LIBRARIES_DIR}/${LIBRARY}")
+foreach(LIBRARY ${EX_LIBRARIES})
+    add_subdirectory("${EX_LIBRARIES_DIR}/${LIBRARY}")
 endforeach(LIBRARY)
-target_link_libraries(${FOO_PROJECT_NAME} ${FOO_LIBRARIES})
+target_link_libraries(${EX_PROJECT_NAME} ${EX_LIBRARIES})
