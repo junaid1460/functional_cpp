@@ -65,16 +65,6 @@ CMAKE_BINARY_DIR = /Users/mj/code/elixir_cpp
 #=============================================================================
 # Targets provided globally by CMake.
 
-# Special rule for the target test
-test:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running tests..."
-	/usr/local/Cellar/cmake/3.21.3/bin/ctest --force-new-ctest-process $(ARGS)
-.PHONY : test
-
-# Special rule for the target test
-test/fast: test
-.PHONY : test/fast
-
 # Special rule for the target rebuild_cache
 rebuild_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
@@ -94,6 +84,16 @@ edit_cache:
 # Special rule for the target edit_cache
 edit_cache/fast: edit_cache
 .PHONY : edit_cache/fast
+
+# Special rule for the target test
+test:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running tests..."
+	/usr/local/Cellar/cmake/3.21.3/bin/ctest --force-new-ctest-process $(ARGS)
+.PHONY : test
+
+# Special rule for the target test
+test/fast: test
+.PHONY : test/fast
 
 # The main all target
 all: cmake_check_build_system
@@ -127,42 +127,42 @@ depend:
 .PHONY : depend
 
 # Convenience name for target.
-libs/defmacro/test/CMakeFiles/ALibraryTests.dir/rule:
-	cd /Users/mj/code/elixir_cpp && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 libs/defmacro/test/CMakeFiles/ALibraryTests.dir/rule
-.PHONY : libs/defmacro/test/CMakeFiles/ALibraryTests.dir/rule
+libs/defmacro/test/CMakeFiles/defmacrotest.dir/rule:
+	cd /Users/mj/code/elixir_cpp && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 libs/defmacro/test/CMakeFiles/defmacrotest.dir/rule
+.PHONY : libs/defmacro/test/CMakeFiles/defmacrotest.dir/rule
 
 # Convenience name for target.
-ALibraryTests: libs/defmacro/test/CMakeFiles/ALibraryTests.dir/rule
-.PHONY : ALibraryTests
+defmacrotest: libs/defmacro/test/CMakeFiles/defmacrotest.dir/rule
+.PHONY : defmacrotest
 
 # fast build rule for target.
-ALibraryTests/fast:
-	cd /Users/mj/code/elixir_cpp && $(MAKE) $(MAKESILENT) -f libs/defmacro/test/CMakeFiles/ALibraryTests.dir/build.make libs/defmacro/test/CMakeFiles/ALibraryTests.dir/build
-.PHONY : ALibraryTests/fast
+defmacrotest/fast:
+	cd /Users/mj/code/elixir_cpp && $(MAKE) $(MAKESILENT) -f libs/defmacro/test/CMakeFiles/defmacrotest.dir/build.make libs/defmacro/test/CMakeFiles/defmacrotest.dir/build
+.PHONY : defmacrotest/fast
 
-ATests.o: ATests.cpp.o
-.PHONY : ATests.o
+defmacroTests.o: defmacroTests.cpp.o
+.PHONY : defmacroTests.o
 
 # target to build an object file
-ATests.cpp.o:
-	cd /Users/mj/code/elixir_cpp && $(MAKE) $(MAKESILENT) -f libs/defmacro/test/CMakeFiles/ALibraryTests.dir/build.make libs/defmacro/test/CMakeFiles/ALibraryTests.dir/ATests.cpp.o
-.PHONY : ATests.cpp.o
+defmacroTests.cpp.o:
+	cd /Users/mj/code/elixir_cpp && $(MAKE) $(MAKESILENT) -f libs/defmacro/test/CMakeFiles/defmacrotest.dir/build.make libs/defmacro/test/CMakeFiles/defmacrotest.dir/defmacroTests.cpp.o
+.PHONY : defmacroTests.cpp.o
 
-ATests.i: ATests.cpp.i
-.PHONY : ATests.i
+defmacroTests.i: defmacroTests.cpp.i
+.PHONY : defmacroTests.i
 
 # target to preprocess a source file
-ATests.cpp.i:
-	cd /Users/mj/code/elixir_cpp && $(MAKE) $(MAKESILENT) -f libs/defmacro/test/CMakeFiles/ALibraryTests.dir/build.make libs/defmacro/test/CMakeFiles/ALibraryTests.dir/ATests.cpp.i
-.PHONY : ATests.cpp.i
+defmacroTests.cpp.i:
+	cd /Users/mj/code/elixir_cpp && $(MAKE) $(MAKESILENT) -f libs/defmacro/test/CMakeFiles/defmacrotest.dir/build.make libs/defmacro/test/CMakeFiles/defmacrotest.dir/defmacroTests.cpp.i
+.PHONY : defmacroTests.cpp.i
 
-ATests.s: ATests.cpp.s
-.PHONY : ATests.s
+defmacroTests.s: defmacroTests.cpp.s
+.PHONY : defmacroTests.s
 
 # target to generate assembly for a file
-ATests.cpp.s:
-	cd /Users/mj/code/elixir_cpp && $(MAKE) $(MAKESILENT) -f libs/defmacro/test/CMakeFiles/ALibraryTests.dir/build.make libs/defmacro/test/CMakeFiles/ALibraryTests.dir/ATests.cpp.s
-.PHONY : ATests.cpp.s
+defmacroTests.cpp.s:
+	cd /Users/mj/code/elixir_cpp && $(MAKE) $(MAKESILENT) -f libs/defmacro/test/CMakeFiles/defmacrotest.dir/build.make libs/defmacro/test/CMakeFiles/defmacrotest.dir/defmacroTests.cpp.s
+.PHONY : defmacroTests.cpp.s
 
 # Help Target
 help:
@@ -173,10 +173,10 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... test"
-	@echo "... ALibraryTests"
-	@echo "... ATests.o"
-	@echo "... ATests.i"
-	@echo "... ATests.s"
+	@echo "... defmacrotest"
+	@echo "... defmacroTests.o"
+	@echo "... defmacroTests.i"
+	@echo "... defmacroTests.s"
 .PHONY : help
 
 

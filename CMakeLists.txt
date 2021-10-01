@@ -35,3 +35,9 @@ foreach(LIBRARY ${EX_LIBRARIES})
     add_subdirectory("${EX_LIBRARIES_DIR}/${LIBRARY}")
 endforeach(LIBRARY)
 target_link_libraries(${EX_PROJECT_NAME} ${EX_LIBRARIES})
+
+add_custom_target(run
+    COMMAND ex_cpp
+    DEPENDS ex_cpp
+    WORKING_DIRECTORY ${CMAKE_PROJECT_DIR}
+)

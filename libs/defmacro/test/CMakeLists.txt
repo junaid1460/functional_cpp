@@ -2,10 +2,10 @@
 cmake_minimum_required(VERSION 3.0.0)
 
 set(TEST_PROJECT_NAME
-    ALibraryTests
+    defmacrotest
 )
 set(LIBRARY_TESTS_SOURCE
-    ATests.cpp
+    defmacroTests.cpp
 )
 
 project(${TEST_PROJECT_NAME})

@@ -1,0 +1,5 @@
+defmacro test do
+  quote do
+    Test
+  end
+end
