@@ -1,11 +1,8 @@
 
 #include <iostream>
-
-#include <A/A.h>
+#include <defmacro/defmacro.h>
 
 int main()
 {
-    std::cout << "Foo main" << std::endl;
-
     return 0;
 }
