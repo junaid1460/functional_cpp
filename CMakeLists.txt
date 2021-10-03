@@ -2,7 +2,7 @@
 cmake_minimum_required(VERSION 3.0.0)
 
 set(EX_PROJECT_NAME
-    ex_cpp
+    funcional_cpp
 )
 set(EX_SOURCE_DIR
     src
@@ -37,7 +37,19 @@ endforeach(LIBRARY)
 target_link_libraries(${EX_PROJECT_NAME} ${EX_LIBRARIES})
 
 add_custom_target(run
-    COMMAND ex_cpp
-    DEPENDS ex_cpp
+    COMMAND ${EX_PROJECT_NAME}
+    DEPENDS ${EX_PROJECT_NAME}
     WORKING_DIRECTORY ${CMAKE_PROJECT_DIR}
 )
+
+include(ExternalProject)
+
+ExternalProject_Add(peglib
+    GIT_REPOSITORY https://github.com/yhirose/cpp-peglib.git
+    CMAKE_ARGS -DCMAKE_INSTALL_PREFIX=peglib
+)
+
+include_directories(peglib-prefix/src/peglib-build/peglib/include)
+
+
+set_property(TARGET ${EX_PROJECT_NAME} PROPERTY CXX_STANDARD 20)

@@ -36,3 +36,7 @@ CTestTestfile.cmake
 
 .vscode
 .elixir_ls
+/googletest-prefix
+/_deps
+/peglib-prefix
+/funcional_cpp
